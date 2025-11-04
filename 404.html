@@ -1,25 +1,34 @@
 ---
+layout: default
+title: "404 - Page Not Found"
 permalink: /404.html
-layout: page
+nav_exclude: true
+search_exclude: true
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<div style="text-align: center; margin-top: 4rem;">
+  <h1 class="fs-9">404</h1>
+  <p class="fs-6 fw-300">Oops! The page you're looking for doesn't exist.</p>
+  
+  <div style="margin: 2rem 0;">
+    <p class="fs-4">🔍 What you can do:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>✅ Check the URL for typos</li>
+      <li>✅ Use the search function (Ctrl+K)</li>
+      <li>✅ Browse from the homepage</li>
+      <li>✅ Check the navigation menu</li>
+    </ul>
+  </div>
 
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div>
+    <a href="{{ '/' | relative_url }}" class="btn btn-primary fs-5 mb-4 mb-md-0 mr-2">Go Home</a>
+    <a href="{{ '/posts' | relative_url }}" class="btn btn-outline fs-5 mb-4 mb-md-0">Browse Posts</a>
+  </div>
 </div>
+
+<script>
+  // Automatically redirect to home page after 10 seconds
+  setTimeout(function() {
+    window.location.href = "{{ '/' | relative_url }}";
+  }, 10000);
+</script>
